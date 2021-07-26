@@ -14,14 +14,14 @@ namespace CoStarNightlyFeedCounter
         static void Main(string[] args)
         {
             // go
-            //ScheduleTimer();
+            ScheduleTimer();
             
             
             // QA code to execute goes here.
-            string nightlyoutput = ReadWriteLogFiles.ReadNightlyLogFile();
-            ReadWriteLogFiles.UpdateNightlyFeedCounter(nightlyoutput);
+            //string nightlyoutput = ReadWriteLogFiles.ReadNightlyLogFile();
+            //ReadWriteLogFiles.UpdateNightlyFeedCounter(nightlyoutput);
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
 
@@ -31,7 +31,7 @@ namespace CoStarNightlyFeedCounter
             Console.WriteLine("### Timer Started ###");
 
             DateTime nowTime = DateTime.Now;
-            DateTime scheduledTime = new DateTime(nowTime.Year, nowTime.Month, nowTime.Day, 10, 14, 0, 0); //Specify your scheduled time HH,MM,SS [12pm and 30 minutes]
+            DateTime scheduledTime = new DateTime(nowTime.Year, nowTime.Month, nowTime.Day, 22, 0, 0, 0); //Specify your scheduled time HH,MM,SS [12pm and 30 minutes]
             if (nowTime > scheduledTime)
             {
                 scheduledTime = scheduledTime.AddDays(1);
@@ -45,9 +45,9 @@ namespace CoStarNightlyFeedCounter
 
         static void TimerElapsed(object sender, ElapsedEventArgs e)
         {
-            Console.WriteLine("### Timer Stopped ### \n");
+            //Console.WriteLine("### Timer Stopped ### \n");
             timer.Stop();
-            Console.WriteLine("### Scheduled Task Started ### \n\n");
+            //Console.WriteLine("### Scheduled Task Started ### \n\n");
             
             // code to execute goes here.
             string nightlyoutput = ReadWriteLogFiles.ReadNightlyLogFile();
