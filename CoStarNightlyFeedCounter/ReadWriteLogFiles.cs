@@ -11,8 +11,6 @@ namespace CoStarNightlyFeedCounter
 {
     public class ReadWriteLogFiles
     {
-        
-
         public static string ReadNightlyLogFile()
         {
             // logs into ftp site and pulls target log file if it exists. If it does not exist. exit with file printed to desktop.
@@ -99,14 +97,15 @@ namespace CoStarNightlyFeedCounter
             {
                 int index = nightlylogoutput.IndexOf(']');
 
-                extractdatelogoutput = nightlylogoutput.Substring(0, index);
+                extractdatelogoutput = nightlylogoutput.Substring(0, index + 1);
                 string dateremovedlogoutput = nightlylogoutput.Substring(index + 1, (nightlylogoutput.Length - 1) - index);
 
                 foreach (char c in dateremovedlogoutput)
                 {
-                    if (Char.IsNumber(c))
+                    if (Char.IsNumber(c) == true)
                     {
-                        newnumberstring.Append(c);
+                        //newnumberstring.Append(c);
+                        newnumberstring += c;
                     }
                 }
             }
@@ -206,7 +205,7 @@ namespace CoStarNightlyFeedCounter
             // else do nothing. falls through to end and restarts the timer
 
 
-
+            Console.WriteLine("### Task Finished ### \n\n");
 
 
         }

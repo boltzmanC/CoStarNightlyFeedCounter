@@ -14,14 +14,14 @@ namespace CoStarNightlyFeedCounter
         static void Main(string[] args)
         {
             // go
-            ScheduleTimer();
+            //ScheduleTimer();
             
             
             // QA code to execute goes here.
-            //string nightlyoutput = ReadWriteLogFiles.ReadNightlyLogFile();
-            //ReadWriteLogFiles.UpdateNightlyFeedCounter(nightlyoutput);
+            string nightlyoutput = ReadWriteLogFiles.ReadNightlyLogFile();
+            ReadWriteLogFiles.UpdateNightlyFeedCounter(nightlyoutput);
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
 
 
